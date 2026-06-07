@@ -1,0 +1,18 @@
+name: Verificacion de estilo Markdown para calidad
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  revision:
+    name: Ejecutar Markdown Lint
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Descargar el codigo del repositorio
+        uses: actions/checkout@v4
+        
+      - name: Comprobar estilo del texto
+        uses: DavidAnson/markdownlint-cli2-action@v16
